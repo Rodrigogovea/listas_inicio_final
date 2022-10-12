@@ -25,7 +25,7 @@ public class lista
                 aux = ultimo;
             }
             aux.siguiente = null;
-    }
+        }
     }
 
     public void eliminarNodo(int dato)
