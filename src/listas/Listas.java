@@ -17,9 +17,10 @@ public class Listas
         miLista.insertarFinal(3);
         miLista.insertarFinal(2);
         miLista.insertarFinal(1);
-        
+//        
         miLista.mostrarElementos();
         System.out.println("");
         miLista.mostrarElementosInv();
+        System.out.println("");
     }
 }
