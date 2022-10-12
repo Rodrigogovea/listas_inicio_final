@@ -13,7 +13,19 @@ public class lista
 
     public void eliminarFinal()
     {
-
+        if(verificarVacia())
+            System.out.println("No hay elementos!!!");
+        else
+        {
+            nodo ultimo = primero;
+            nodo aux = ultimo.siguiente;
+            while(aux.siguiente!=null)
+            {
+                ultimo = ultimo.siguiente;
+                aux = ultimo;
+            }
+            aux.siguiente = null;
+    }
     }
 
     public void eliminarNodo(int dato)
@@ -23,8 +35,13 @@ public class lista
     
     public void mostrarElementosInv()
     {
-        inverso(primero);
-        System.out.println("");
+        if(verificarVacia())
+            System.out.println("No hay elementos en la lista");
+        else
+        {
+            inverso(primero);
+            System.out.println("");
+        }
     }
     
     private void inverso(nodo primero)
@@ -48,6 +65,7 @@ public class lista
             while(ultimo.siguiente!=null)
             {
                 //System.out.println(ultimo.getDato());
+                
                 ultimo = ultimo.siguiente;
             }
             ultimo.siguiente = temp;

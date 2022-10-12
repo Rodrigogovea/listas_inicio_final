@@ -70,6 +70,5 @@ public class Listas
             }
         }while(opc!=8);
         lector.close();
-        
     }
 }
