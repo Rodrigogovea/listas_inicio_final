@@ -36,7 +36,7 @@ public class lista
             ultimo = ultimo.siguiente;
         }
         ultimo.siguiente = temp;
-        aux = primero;
+        //aux = primero;
     }
     public void insertar(int dato)
     {
