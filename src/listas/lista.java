@@ -4,7 +4,6 @@ public class lista
 {
     private int tamanio = 0;
     private nodo primero;
-    private nodo aux;
     
     lista()
     {
@@ -18,13 +17,18 @@ public class lista
         else
         {
             nodo ultimo = primero;
-            nodo aux = ultimo.siguiente;
-            while(aux.siguiente!=null)
+            if(ultimo.siguiente == null)
+                primero = null;
+            else
             {
-                ultimo = ultimo.siguiente;
-                aux = ultimo;
+                nodo aux = ultimo.siguiente;
+                while(aux.siguiente!=null)
+                {
+                    aux = ultimo.siguiente;
+                    ultimo = ultimo.siguiente;
+                }
+                ultimo.siguiente = null;
             }
-            aux.siguiente = null;
         }
     }
 

@@ -19,7 +19,7 @@ public class Listas
             System.out.println("4.- Mostrar elementos de forma inversa");
             System.out.println("5.- Eliminar un elemento");
             System.out.println("6.- Eliminar elemento al final");
-            System.out.println("7.- Eliminar un elemento especifico");
+            System.out.println("7.- Eliminar un elemento específico");
             System.out.println("8.- Salir");
             opc = lector.nextInt();
             switch(opc)
