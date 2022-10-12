@@ -10,10 +10,21 @@ public class lista
     {
         primero = null;
     }
+
+    public void eliminarFinal()
+    {
+
+    }
+
+    public void eliminarNodo(int dato)
+    {
+
+    }
     
     public void mostrarElementosInv()
     {
         inverso(primero);
+        System.out.println("");
     }
     
     private void inverso(nodo primero)
@@ -23,20 +34,25 @@ public class lista
         else
             inverso(primero.siguiente);
         
-        System.out.println(primero.getDato());
+        System.out.print(primero.getDato() + ",");
     }
     
     public void insertarFinal(int dato)
     {
-        nodo temp = new nodo(dato);
-        nodo ultimo = primero;
-        while(ultimo.siguiente!=null)
+        if(verificarVacia())
+            insertar(dato);
+        else
         {
-            //System.out.println(ultimo.getDato());
-            ultimo = ultimo.siguiente;
+            nodo temp = new nodo(dato);
+            nodo ultimo = primero;
+            while(ultimo.siguiente!=null)
+            {
+                //System.out.println(ultimo.getDato());
+                ultimo = ultimo.siguiente;
+            }
+            ultimo.siguiente = temp;
+            //aux = primero;
         }
-        ultimo.siguiente = temp;
-        //aux = primero;
     }
     public void insertar(int dato)
     {
@@ -55,10 +71,11 @@ public class lista
             nodo dato = primero;
             while(dato != null)
             {
-                System.out.println(dato.getDato());
+                System.out.print(dato.getDato() + ",");
                 dato = dato.siguiente;
             }
         }
+        System.out.println("");
     }
     
     public boolean verificarVacia()
