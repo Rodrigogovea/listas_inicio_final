@@ -75,11 +75,6 @@ public class lista
             ultimo.siguiente = temp;
             //aux = primero;
         }
-<<<<<<< HEAD
-        ultimo.siguiente = temp;
-        //aux = primero;
-=======
->>>>>>> 03ee6cc08f2e0911e0e949259d793401b072a5cb
     }
     public void insertar(int dato)
     {
