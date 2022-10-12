@@ -4,16 +4,48 @@ public class lista
 {
     private int tamanio = 0;
     private nodo primero;
-    private nodo aux;
     
     lista()
     {
         primero = null;
     }
+
+    public void eliminarFinal()
+    {
+        if(verificarVacia())
+            System.out.println("No hay elementos!!!");
+        else
+        {
+            nodo ultimo = primero;
+            if(ultimo.siguiente == null)
+                primero = null;
+            else
+            {
+                nodo aux = ultimo.siguiente;
+                while(aux.siguiente!=null)
+                {
+                    aux = ultimo.siguiente;
+                    ultimo = ultimo.siguiente;
+                }
+                ultimo.siguiente = null;
+            }
+        }
+    }
+
+    public void eliminarNodo(int dato)
+    {
+
+    }
     
     public void mostrarElementosInv()
     {
-        inverso(primero);
+        if(verificarVacia())
+            System.out.println("No hay elementos en la lista");
+        else
+        {
+            inverso(primero);
+            System.out.println("");
+        }
     }
     
     private void inverso(nodo primero)
@@ -23,20 +55,31 @@ public class lista
         else
             inverso(primero.siguiente);
         
-        System.out.println(primero.getDato());
+        System.out.print(primero.getDato() + ",");
     }
     
     public void insertarFinal(int dato)
     {
-        nodo temp = new nodo(dato);
-        nodo ultimo = primero;
-        while(ultimo.siguiente!=null)
+        if(verificarVacia())
+            insertar(dato);
+        else
         {
-            //System.out.println(ultimo.getDato());
-            ultimo = ultimo.siguiente;
+            nodo temp = new nodo(dato);
+            nodo ultimo = primero;
+            while(ultimo.siguiente!=null)
+            {
+                //System.out.println(ultimo.getDato());
+                
+                ultimo = ultimo.siguiente;
+            }
+            ultimo.siguiente = temp;
+            //aux = primero;
         }
+<<<<<<< HEAD
         ultimo.siguiente = temp;
         //aux = primero;
+=======
+>>>>>>> 03ee6cc08f2e0911e0e949259d793401b072a5cb
     }
     public void insertar(int dato)
     {
@@ -55,10 +98,11 @@ public class lista
             nodo dato = primero;
             while(dato != null)
             {
-                System.out.println(dato.getDato());
+                System.out.print(dato.getDato() + ",");
                 dato = dato.siguiente;
             }
         }
+        System.out.println("");
     }
     
     public boolean verificarVacia()
